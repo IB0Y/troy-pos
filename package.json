@@ -1,0 +1,19 @@
+{
+  "name": "tory-pos",
+  "version": "1.0.0",
+  "description": "A inventory management POS system",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/philipwaluisachi/Tory-POS.git"
+  },
+  "author": "Waluisachi Philip",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/philipwaluisachi/Tory-POS/issues"
+  },
+  "homepage": "https://github.com/philipwaluisachi/Tory-POS#readme"
+}
