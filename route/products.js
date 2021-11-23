@@ -2,10 +2,10 @@ const express = require('express');
 
 const router = express.Router();
 // controllers
-const { addInventory, recordSale } = require('../controllers/products');
+const { addInventory, products } = require('../controllers/products');
 
 // Routes
-router.route("/products/add-inventory").post(addInventory);
-router.route("/products/record-sale").post(recordSale);
+router.route("/add").post(addInventory);
+router.route("/").get(products);
 
 module.exports = router;
