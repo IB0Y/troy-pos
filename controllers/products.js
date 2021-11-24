@@ -5,7 +5,7 @@ exports.addInventory = async (req, res, next) => {
 
   try {
     // check is product exists
-    const product = await Product.findOne({name});
+    let product = await Product.findOne({name});
     if (product) {
       res.status(201).json({
         product,
@@ -54,11 +54,12 @@ exports.update = async (req, res, next) => {
     // Find product
     let product = await Product.findOne({_id: productId});
     if (product) {
-      let number = product.quantity;
-      console.log(number);
+      // let number = product.quantity;
+      // number = number +  ;
+      // console.log(number);
 
-      // product.quantity = number;
-      // product = await product.save();
+      product.quantity = product.quantity + quantity;
+      product = await product.save();
 
       res.status(201).json({
         product,
