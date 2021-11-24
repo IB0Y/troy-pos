@@ -10,7 +10,7 @@ const connectDB = async () => {
 
     try {
       await mongoose.connect(
-          process.env.MONGOURI,
+          'mongodb+srv://admin:9wfvJN2jgzj33zCG@cluster0.jgakz.mongodb.net/myFirstDatabase?retryWrites=true&w=majority',
           connectionParams,
       );
       console.log('Database connected.');
