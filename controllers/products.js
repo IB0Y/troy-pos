@@ -54,10 +54,11 @@ exports.update = async (req, res, next) => {
     // Find product
     let product = await Product.findOne({_id: productId});
     if (product) {
-      let number = product.quantity + quantity;
+      let number = product.quantity;
+      console.log(number);
 
-      product.quantity = number;
-      product = await product.save();
+      // product.quantity = number;
+      // product = await product.save();
 
       res.status(201).json({
         product,
