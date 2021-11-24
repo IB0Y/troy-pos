@@ -1,20 +1,34 @@
-const Sale = require('./models/Sale');
+const Sale = require('../models/Sale');
+const Product = require('../models/Product');
 
 exports.recordSale = async (req, res, next) => {
-  const { productId, amount } = req.body;
+  const { productId, quantity } = req.body;
+  let amount;
 
   try {
-    const sale = Sale.create({
-      productId,
-      amount
-    });
+    // find product
+    const product = await Product.findOne({_id: productId});
+    if (product) {
+      // Update quantity
+      product.quantity = product.quantity - quantity;
+      amount = product.price * quantity;
+       await product.save();
 
-    if (sale) {
-      res.status(201).json({
-        sale,
-        message: "Sale record created."
-      });
+       // Record sele
+       const sale = await Sale.create({
+         productId,
+         quantity,
+         amount
+       });
+
+       if (sale) {
+         res.status(201).json({
+           sale,
+           message: "Sale record created."
+         });
+       }
     }
+
   } catch (e) {
 
   }
@@ -22,7 +36,7 @@ exports.recordSale = async (req, res, next) => {
 
 exports.records = async (req, res) => {
   try {
-    const sales = Sale.find({});
+    const sales = await Sale.find({});
     if (sales) {
       res.status(201).json({
         sales

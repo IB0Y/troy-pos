@@ -5,6 +5,10 @@ const SaleSchema = mongoose.Schema({
     type: String,
     required: true
   },
+  quantity: {
+    type: Number,
+    default: 1
+  },
   amount: {
     type:Number,
     required: true,
@@ -16,4 +20,6 @@ const SaleSchema = mongoose.Schema({
   }
 });
 
-exports.Sale = mongoose.model("sale", SaleSchema);
+const Sale = mongoose.model("Sale", SaleSchema);
+
+module.exports = Sale;
