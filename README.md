@@ -1,15 +1,16 @@
 # Tory-POS
 A inventory management POS system 
+An express & node js backend API
 # Author
 Philip Waluisachi
 # Getting started
 ## Installing packages
-```` npm install ````
+``` npm install ```
 ## Starting application
-```` npm start ````
+``` npm start ```
 ## Starting development server
-```` npm run dev ```
+``` npm run dev ```
 ## Website
-https://climatechangesapi.herokuapp.com
+https://troy-pos.herokuapp.com
 ## Rapid API link
-https://rapidapi.com/philipwaluisachi/api/climate-change-live32
+https://rapidapi.com/provider/5730828/apis/tory-pos/
